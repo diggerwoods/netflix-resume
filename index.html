@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Graves - Professional Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Video Background -->
+    <div id="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="background-video.mp4" type="video/mp4">
+            <source src="background-video.webm" type="video/webm">
+            <!-- Fallback for browsers that don't support video -->
+            <div class="video-fallback"></div>
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <!-- Netflix Sound Effect -->
+    <audio id="netflix-sound" preload="auto">
+        <source src="./assets/audio/netflix-sound.mp3" type="audio/mpeg">
+        <!-- Fallback Netflix-style sound -->
+    </audio>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DAVID<span style="color: #e50914;">GRAVES</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">David Graves, PMP</h1>
+            <p class="hero-subtitle">Senior Manager | Innovation Leader | Technology & Process Transformation Expert</p>
+            <p class="hero-description">
+                Strategic, award-winning senior leader with 12+ years driving enterprise-level transformation through innovative thinking and emerging technology adoption. Expert in reimagining business processes, implementing cutting-edge solutions, and pioneering new ways of working to deliver scalable transformation across cybersecurity, data governance, and client operations.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSection('experience')">
+                    <i class="fas fa-play"></i> View Experience
+                </button>
+                <button class="btn-secondary" onclick="downloadResume()">
+                    <i class="fas fa-download"></i> Download CV
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="./assets/images/dave-headshot.jpg" alt="David Graves Profile Photo" id="profile-img">
+        </div>
+    </section>
+
+    <!-- Professional Certifications Section -->
+    <section class="content-section">
+        <h2 class="section-title">Professional Certifications</h2>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px; max-width: 1200px; margin: 0 auto;">
+            <div style="background: rgba(229, 9, 20, 0.05); padding: 30px; border-radius: 15px; border-left: 4px solid #e50914;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <div style="background: #1a1a1a; padding: 20px; border-radius: 10px; border: 1px solid #333;">
+                        <h4 style="color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            <img src="./assets/images/pmp.webp" alt="PMP Certification" style="width: 24px; height: 24px; object-fit: contain;">
+                            PMP - Project Management Professional
+                        </h4>
+                        <p style="color: #cccccc; font-size: 0.9rem;">Advanced project management expertise and PMI methodologies</p>
+                    </div>
+                    <div style="background: #1a1a1a; padding: 20px; border-radius: 10px; border: 1px solid #333;">
+                        <h4 style="color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            <img src="./assets/images/green-belt.jpg" alt="Green Belt Certification" style="width: 24px; height: 24px; object-fit: contain;">
+                            Green Belt - Lean Six Sigma
+                        </h4>
+                        <p style="color: #cccccc; font-size: 0.9rem;">Process improvement and continuous innovation methodologies</p>
+                    </div>
+                    <div style="background: #1a1a1a; padding: 20px; border-radius: 10px; border: 1px solid #333;">
+                        <h4 style="color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            <img src="./assets/images/finra.png" alt="FINRA Certification" style="width: 24px; height: 24px; object-fit: contain;">
+                            FINRA Series 7 & 24
+                        </h4>
+                        <p style="color: #cccccc; font-size: 0.9rem;">Securities and financial services regulatory compliance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue Watching Section -->
+    <section class="content-section">
+        <h2 class="section-title">Continue Watching My Journey</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="card current-project" onclick="openModal('studies-modal')">
+                    <img src="./assets/images/ai-ml-header.jpg" alt="Current Studies">
+                    <div class="card-info">
+                        <h3>M.S. Computer Science (AI/ML)</h3>
+                        <p>Completing advanced degree at Colorado State University Global</p>
+                        <span class="progress-bar">
+                            <span class="progress" style="width: 95%"></span>
+                        </span>
+                        <div class="click-indicator" style="margin-top: 10px; font-size: 0.8rem; color: #e50914;">▶ Click for curriculum details</div>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('project1')">
+                    <img src="./assets/images/bird-migration.webp" alt="Recent Achievement">
+                    <div class="card-info">
+                        <h3>Enterprise IAM Migration</h3>
+                        <p>Led 1,000+ user migration with zero defects, $25M+ savings</p>
+                        <span class="badge">Completed</span>
+                        <div class="click-indicator" style="margin-top: 10px; font-size: 0.8rem; color: #e50914;">▶ Click for project details</div>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('awards-modal')">
+                    <img src="./assets/images/awards-front.jpg" alt="Recognition">
+                    <div class="card-info">
+                        <h3>Multiple Awards</h3>
+                        <p>Gold Stevie Award, NICSA NOVA Award, 2× TIAA Values Champion</p>
+                        <span class="badge">Recognized</span>
+                        <div class="click-indicator" style="margin-top: 10px; font-size: 0.8rem; color: #e50914;">▶ Click for award details</div>
+                    </div>
+                </div>
+                <div class="card project-card" onclick="openModal('project2')">
+                    <img src="./assets/images/pathfinder-card.webp" alt="Pathfinder System">
+                    <div class="card-info">
+                        <h3>Pathfinder Product System</h3>
+                        <p>120,000+ client escalations resolved efficiently, saving over $15M in complaints</p>
+                        <div class="tech-stack">
+                            <span>Product Management</span>
+                            <span>Analytics</span>
+                            <span>Dashboards</span>
+                        </div>
+                        <div class="click-indicator" style="margin-top: 10px; font-size: 0.8rem; color: #e50914;">▶ Click for project details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="content-section">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="card experience-card" onclick="openModal('seniorManager')">
+                    <img src="./assets/images/tiaa-logo.webp" alt="TIAA Senior Manager Position">
+                    <div class="card-info">
+                        <h3>Senior Manager</h3>
+                        <p class="company">TIAA</p>
+                        <p class="duration">2014 - 2026</p>
+                        <ul class="achievements">
+                            <li>Enterprise IAM, Cybersecurity & Data Governance</li>
+                            <li>Product Ownership & Digital Transformation</li>
+                            <li>Cross-Functional Leadership & Vendor Management</li>
+                            <li style="margin-top: 10px; font-size: 0.8rem; color: #e50914;">▶ Click to see full experience details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="content-section">
+        <h2 class="section-title">My List - Core Skills</h2>
+        <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-top: 30px;">
+            <div class="skill-category" style="background: rgba(229, 9, 20, 0.05); padding: 25px; border-radius: 12px; border-left: 4px solid #e50914;">
+                <h3 style="color: #e50914; margin-bottom: 18px; font-size: 1.1rem; font-weight: 600;">Technical Program Management</h3>
+                <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="skill-tag">Agile/SAFe Leadership</span>
+                    <span class="skill-tag">Product Ownership</span>
+                    <span class="skill-tag">Vendor Management</span>
+                    <span class="skill-tag">UAT Strategy</span>
+                    <span class="skill-tag">Process Optimization</span>
+                </div>
+            </div>
+            
+            <div class="skill-category" style="background: rgba(229, 9, 20, 0.05); padding: 25px; border-radius: 12px; border-left: 4px solid #e50914;">
+                <h3 style="color: #e50914; margin-bottom: 18px; font-size: 1.1rem; font-weight: 600;">Cybersecurity & IAM</h3>
+                <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="skill-tag">Identity & Access Management</span>
+                    <span class="skill-tag">RBAC Design</span>
+                    <span class="skill-tag">Zero Trust</span>
+                    <span class="skill-tag">Compliance</span>
+                    <span class="skill-tag">Risk Management</span>
+                </div>
+            </div>
+            
+            <div class="skill-category" style="background: rgba(229, 9, 20, 0.05); padding: 25px; border-radius: 12px; border-left: 4px solid #e50914;">
+                <h3 style="color: #e50914; margin-bottom: 18px; font-size: 1.1rem; font-weight: 600;">Technical Skills</h3>
+                <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">OpenCV</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Excel Advanced</span>
+                    <span class="skill-tag">Jira</span>
+                </div>
+            </div>
+            
+            <div class="skill-category" style="background: rgba(229, 9, 20, 0.05); padding: 25px; border-radius: 12px; border-left: 4px solid #e50914;">
+                <h3 style="color: #e50914; margin-bottom: 18px; font-size: 1.1rem; font-weight: 600;">Leadership & Strategy</h3>
+                <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="skill-tag">Data Governance</span>
+                    <span class="skill-tag">Cross-Functional Leadership</span>
+                    <span class="skill-tag">Digital Transformation</span>
+                    <span class="skill-tag">AI/ML Foundations</span>
+                    <span class="skill-tag">Operational Excellence</span>
+                </div>
+            </div>
+            
+            <div class="skill-category" style="background: rgba(229, 9, 20, 0.05); padding: 25px; border-radius: 12px; border-left: 4px solid #e50914;">
+                <h3 style="color: #e50914; margin-bottom: 18px; font-size: 1.1rem; font-weight: 600;">Finance & Securities</h3>
+                <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="skill-tag">FINRA Series 7 Licensed</span>
+                    <span class="skill-tag">FINRA Series 24 Licensed</span>
+                    <span class="skill-tag">Securities Compliance</span>
+                    <span class="skill-tag">Financial Services</span>
+                    <span class="skill-tag">Investment Products</span>
+                </div>
+            </div>
+            
+            <div class="skill-category" style="background: rgba(229, 9, 20, 0.05); padding: 25px; border-radius: 12px; border-left: 4px solid #e50914;">
+                <h3 style="color: #e50914; margin-bottom: 18px; font-size: 1.1rem; font-weight: 600;">Innovation & Technology</h3>
+                <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="skill-tag">Emerging Technology Adoption</span>
+                    <span class="skill-tag">Digital Innovation</span>
+                    <span class="skill-tag">Process Automation</span>
+                    <span class="skill-tag">Lean Methodologies</span>
+                    <span class="skill-tag">Technology Integration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="content-section">
+        <h2 class="section-title">Educational Background</h2>
+        <div class="education-timeline">
+            <div class="education-item">
+                <div class="education-year">2026</div>
+                <div class="education-content">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="./assets/images/csu-global-logo.webp" alt="CSU Global Logo" style="width: 60px; height: 60px; border-radius: 10px; object-fit: contain;">
+                        <div>
+                            <h3>M.S., Computer Science (AI/ML)</h3>
+                            <p>Colorado State University Global</p>
+                            <p>Specialization: Artificial Intelligence & Machine Learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-year">Past</div>
+                <div class="education-content">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="./assets/images/cu-boulder-logo.jpg" alt="CU Boulder Logo" style="width: 60px; height: 60px; border-radius: 10px; object-fit: contain;">
+                        <div>
+                            <h3>B.A., Psychology</h3>
+                            <p>University of Colorado Boulder</p>
+                            <p>Foundation in human behavior and analytical thinking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>digger.woods@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p>(303) 217-1614</p>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p><a href="https://linkedin.com/in/david-graves-67aa09228" target="_blank" style="color: #e50914; text-decoration: none;">linkedin.com/in/david-graves-67aa09228</a></p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>Denver, CO</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 David Graves. All rights reserved.</p>
+            <p>Built with passion and a love for clean code.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <div id="project1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project1')">&times;</span>
+            
+            <!-- Enterprise IAM Header Background -->
+            <div style="position: relative; margin-bottom: 30px; border-radius: 12px; overflow: hidden; text-align: center;">
+                <img src="./assets/images/penguin-migration.jpg" alt="Enterprise IAM Leadership" style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 12px;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 20px;">
+                    <h2 style="color: #e50914; margin: 0;">Enterprise IAM Migration</h2>
+                    <p style="color: #ffffff; margin: 5px 0 0 0;"><strong>Zero Defect Migration | 1,000+ Users | $25M+ Savings</strong></p>
+                </div>
+            </div>
+            <p>Led a comprehensive Identity and Access Management migration for over 1,000 users through strategic vendor partnership. Successfully transitioned all users to vendor-managed environment as part of enterprise vendor management strategy. Fully operational Day 1 with zero major defects across 1000+ users, contributing to $25M+ in organizational savings through optimized vendor relationships and streamlined operations.</p>
+            <h3>Key Achievements:</h3>
+            <ul>
+                <li>Fully operational Day 1 with zero major defects across 1,000+ user migration</li>
+                <li>RBAC design and cybersecurity alignment</li>
+                <li>Cross-functional coordination with IT, Cyber, and Compliance</li>
+                <li>Regulatory compliance and internal controls adherence</li>
+                <li>$25M+ organizational savings contribution</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project2')">&times;</span>
+            
+            <!-- Pathfinder Product System Header Background -->
+            <div style="position: relative; margin-bottom: 30px; border-radius: 12px; overflow: hidden; text-align: center;">
+                <img src="./assets/images/pathfinder-header.jpg" alt="Pathfinder Product Leadership" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 20px;">
+                    <h2 style="color: #e50914; margin: 0;">Pathfinder Product System</h2>
+                    <p style="color: #ffffff; margin: 5px 0 0 0;"><strong>120,000+ Cases Resolved | $15M+ Complaint Savings</strong></p>
+                </div>
+            </div>
+            <p>Product Owner for the enterprise Pathfinder system, delivering exceptional results in client escalation management and operational efficiency. Transformed how individual client escalations were handled through expedited resolution processes, saving the firm over $15M in complaint-related costs.</p>
+            <h3>Impact & Results:</h3>
+            <ul>
+                <li>120,000+ individual client escalations successfully resolved</li>
+                <li>Expedited resolution processes reducing case handling time</li>
+                <li>$15M+ in complaint-related cost savings for the firm</li>
+                <li>Designed analytics and reporting frameworks for escalation tracking</li>
+                <li>Enabled data-driven decision making for operational excellence</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project3')">&times;</span>
+            <h2>Digital Transformation Initiative</h2>
+            <p>Drove modernization initiatives leveraging automation, AI/ML foundations, and digital workflow optimization across the enterprise...</p>
+            <h3>Transformation Areas:</h3>
+            <ul>
+                <li>AI/ML foundations implementation and applied analytics</li>
+                <li>Automated workflow optimization</li>
+                <li>Data governance and stewardship programs</li>
+                <li>Technology readiness and UAT strategy</li>
+                <li>Process improvement and operational excellence</li>
+            </ul>
+            <a href="#" class="btn-primary">Transformation Story</a>
+            <a href="#" class="btn-secondary">Technical Details</a>
+        </div>
+    </div>
+
+    <!-- Studies Detail Modal -->
+    <div id="studies-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('studies-modal')">&times;</span>
+            
+            <!-- Studies Image Header -->
+            <div style="position: relative; margin-bottom: 30px; border-radius: 12px; overflow: hidden; text-align: center;">
+                <img src="./assets/images/senior-manager.webp" alt="AI/ML Studies" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 20px;">
+                    <h2 style="color: #e50914; margin: 0;">Master of Science - Computer Science (AI/ML)</h2>
+                    <h3 style="color: #ffffff; margin: 5px 0 0 0;">Colorado State University Global | Expected Graduation: May 2026</h3>
+                </div>
+            </div>
+            
+            <h3 style="color: #e50914; margin-top: 30px;">Program Overview:</h3>
+            <p style="margin-bottom: 20px;">Advanced graduate program focused on Artificial Intelligence and Machine Learning, emphasizing practical application of cutting-edge technologies in enterprise environments. Curriculum designed for working professionals seeking to master AI/ML implementation strategies.</p>
+            
+            <h3 style="color: #e50914; margin-top: 30px;">Core Competencies Developed:</h3>
+            <div style="background: rgba(229, 9, 20, 0.05); padding: 20px; border-radius: 10px; border-left: 4px solid #e50914; margin-bottom: 30px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div>
+                        <h4 style="color: #e50914; margin-bottom: 10px;">Machine Learning & AI</h4>
+                        <ul style="line-height: 1.6;">
+                            <li>Supervised & Unsupervised Learning</li>
+                            <li>Deep Learning & Neural Networks</li>
+                            <li>Natural Language Processing</li>
+                            <li>Computer Vision Applications</li>
+                            <li>Reinforcement Learning</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #e50914; margin-bottom: 10px;">Data Science & Analytics</h4>
+                        <ul style="line-height: 1.6;">
+                            <li>Statistical Analysis & Modeling</li>
+                            <li>Big Data Processing (Hadoop, Spark)</li>
+                            <li>Data Visualization & BI Tools</li>
+                            <li>Predictive Analytics</li>
+                            <li>Time Series Forecasting</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #e50914; margin-bottom: 10px;">Programming & Development</h4>
+                        <ul style="line-height: 1.6;">
+                            <li>Python (TensorFlow, PyTorch, Scikit-learn)</li>
+                            <li>R for Statistical Computing</li>
+                            <li>SQL & NoSQL Databases</li>
+                            <li>Cloud Platforms (AWS, Azure, GCP)</li>
+                            <li>MLOps & Model Deployment</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #e50914; margin-bottom: 10px;">Research & Ethics</h4>
+                        <ul style="line-height: 1.6;">
+                            <li>AI Ethics & Responsible AI</li>
+                            <li>Research Methodology</li>
+                            <li>Bias Detection & Mitigation</li>
+                            <li>Privacy-Preserving ML</li>
+                            <li>Algorithmic Fairness</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="color: #e50914; margin-top: 30px;">Key Coursework Completed:</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                <div style="background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #333;">
+                    <h4 style="color: #ffffff; margin-bottom: 8px;">Foundations of Machine Learning</h4>
+                    <p style="color: #cccccc; font-size: 0.9rem;">Algorithm design, model evaluation, feature engineering</p>
+                </div>
+                <div style="background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #333;">
+                    <h4 style="color: #ffffff; margin-bottom: 8px;">Deep Learning Architecture</h4>
+                    <p style="color: #cccccc; font-size: 0.9rem;">CNNs, RNNs, Transformers, GANs</p>
+                </div>
+                <div style="background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #333;">
+                    <h4 style="color: #ffffff; margin-bottom: 8px;">Data Mining & Analytics</h4>
+                    <p style="color: #cccccc; font-size: 0.9rem;">Pattern recognition, clustering, association rules</p>
+                </div>
+                <div style="background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #333;">
+                    <h4 style="color: #ffffff; margin-bottom: 8px;">AI Ethics & Society</h4>
+                    <p style="color: #cccccc; font-size: 0.9rem;">Responsible AI, bias mitigation, policy implications</p>
+                </div>
+                <div style="background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #333;">
+                    <h4 style="color: #ffffff; margin-bottom: 8px;">Cloud Computing for AI</h4>
+                    <p style="color: #cccccc; font-size: 0.9rem;">Scalable ML systems, distributed computing</p>
+                </div>
+                <div style="background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #333;">
+                    <h4 style="color: #ffffff; margin-bottom: 8px;">Capstone Project</h4>
+                    <p style="color: #cccccc; font-size: 0.9rem;">Enterprise AI solution design & implementation</p>
+                </div>
+            </div>
+            
+            <h3 style="color: #e50914; margin-top: 30px;">Academic Achievements:</h3>
+            <ul style="line-height: 1.8; margin-bottom: 30px;">
+                <li><strong>GPA:</strong> 3.94 (Dean's List - All Semesters)</li>
+                <li><strong>Graduate Research:</strong> AI-driven cybersecurity threat detection systems</li>
+                <li><strong>Certifications Earned:</strong> AWS Certified Machine Learning, Google Cloud AI Engineer, CPMAI (Certified Public Manager AI)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Senior Manager Modal -->
+    <div id="seniorManager" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('seniorManager')">&times;</span>
+            
+            <!-- Senior Manager Video Header -->
+            <div style="position: relative; margin-bottom: 30px; border-radius: 12px; overflow: hidden;">
+                <video id="senior-manager-video" autoplay muted loop style="width: 100%; height: 250px; object-fit: cover;">
+                    <source src="./assets/videos/particle-gold.mov" type="video/quicktime">
+                    <source src="./assets/videos/particle-gold.mp4" type="video/mp4">
+                    <!-- Fallback gradient if video doesn't load -->
+                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #0a0a0a, #e50914, #1a1a1a); display: flex; align-items: center; justify-content: center;">
+                        <span style="color: #fff; font-size: 1.2rem; font-weight: bold;">Senior Management</span>
+                    </div>
+                </video>
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 20px;">
+                    <h2 style="color: #e50914; margin: 0;">Senior Manager - Enterprise Technology Leadership</h2>
+                    <p style="color: #ffffff; margin: 5px 0 0 0;"><strong>TIAA | 2014 - 2026 (12+ Years)</strong></p>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 25px;">
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">Strategic, award-winning senior leader driving enterprise-level transformation across technology, cybersecurity, data governance, IAM, and client operations. Recognized for bridging business and technical domains, leading cross-functional programs, and delivering scalable solutions that enhance security, efficiency, and customer experience.</p>
+                
+                <p style="color: #cccccc; line-height: 1.6; margin-bottom: 0;">Adept at translating complex requirements into actionable roadmaps, managing vendor transitions, and guiding organizations through modernization and digital transformation. Known for strategic clarity, cross-functional influence, and operational rigor.</p>
+            </div>
+            
+            <h3 style="color: #e50914; margin-top: 35px; margin-bottom: 20px; font-size: 1.4rem;">Key Leadership Highlights</h3>
+            <div style="background: rgba(229, 9, 20, 0.05); padding: 25px; border-radius: 10px; border-left: 4px solid #e50914; margin-bottom: 35px;">
+                <ul style="line-height: 1.8; margin: 0; padding-left: 20px;">
+                    <li style="margin-bottom: 12px;"><strong>Enterprise IAM Strategy:</strong> Directed enterprise IAM strategy for 1,000+ user migration with zero major defects</li>
+                    <li style="margin-bottom: 12px;"><strong>Cybersecurity Leadership:</strong> Led RBAC design and cybersecurity alignment across business units</li>
+                    <li style="margin-bottom: 12px;"><strong>Technology Readiness:</strong> Managed UAT and technology readiness for 500+ re-badged associates</li>
+                    <li style="margin-bottom: 0;"><strong>Product Success:</strong> Product Owner for Pathfinder system achieving over 120,000 cases solved</li>
+                </ul>
+            </div>
+            
+            <h3 style="color: #e50914; margin-top: 35px; margin-bottom: 25px; font-size: 1.4rem;">Core Leadership Responsibilities</h3>
+            
+            <div style="margin-bottom: 35px;">
+                <h4 style="color: #ffffff; margin-bottom: 18px; font-size: 1.25rem; padding: 12px 0; border-bottom: 2px solid #333;">Enterprise IAM & Cybersecurity Leadership</h4>
+                <ul style="margin-bottom: 0; line-height: 1.7; padding-left: 20px;">
+                    <li style="margin-bottom: 14px;"><strong>Zero Major Defect IAM Migration:</strong> Directed enterprise IAM strategy for 1,000+ user migration with zero major defects, contributing to $25M+ in organizational savings</li>
+                    <li style="margin-bottom: 14px;"><strong>RBAC Design & Implementation:</strong> Led Role-Based Access Control design, access provisioning, and cybersecurity alignment across multiple business units</li>
+                    <li style="margin-bottom: 14px;"><strong>Technology Readiness:</strong> Managed UAT and technology readiness for 500+ re-badged associates, including VDI validation, application provisioning, and access certification</li>
+                    <li style="margin-bottom: 14px;"><strong>Governance Leadership:</strong> Served as Data Steward, Privacy Lead, and Business Continuity Manager, strengthening governance, data quality, and risk mitigation</li>
+                    <li style="margin-bottom: 0;"><strong>Compliance & Controls:</strong> Ensured compliance with regulatory and internal controls across enterprise security initiatives</li>
+                </ul>
+            </div>
+            
+            <div style="margin-bottom: 35px;">
+                <h4 style="color: #ffffff; margin-bottom: 18px; font-size: 1.25rem; padding: 12px 0; border-bottom: 2px solid #333;">Program & Product Leadership</h4>
+                <ul style="margin-bottom: 0; line-height: 1.7; padding-left: 20px;">
+                    <li style="margin-bottom: 14px;"><strong>Pathfinder System Success:</strong> Product Owner for the enterprise Pathfinder system, enabling over 120,000 cases solved and $15M+ in complaint-related cost savings</li>
+                    <li style="margin-bottom: 14px;"><strong>Analytics & Reporting:</strong> Designed and implemented dashboards, analytics, and reporting frameworks to support data-driven decision making</li>
+                    <li style="margin-bottom: 14px;"><strong>Agile Leadership:</strong> Led Agile ceremonies, backlog refinement, sprint planning, and cross-team coordination across multiple business units</li>
+                    <li style="margin-bottom: 14px;"><strong>Modernization Initiatives:</strong> Drove modernization initiatives leveraging automation, AI/ML foundations, and digital workflow optimization</li>
+                    <li style="margin-bottom: 14px;"><strong>Operational Excellence:</strong> Delivered operational excellence initiatives that improved efficiency, reduced defects, and enhanced customer experience</li>
+                    <li style="margin-bottom: 0;"><strong>Cross-Functional Coordination:</strong> Led coordination between IT, Cyber, Data Engineering, Operations, and Compliance teams</li>
+                </ul>
+            </div>
+            
+            <div style="margin-bottom: 35px;">
+                <h4 style="color: #ffffff; margin-bottom: 18px; font-size: 1.25rem; padding: 12px 0; border-bottom: 2px solid #333;">Vendor & Contract Management</h4>
+                <ul style="margin-bottom: 0; line-height: 1.7; padding-left: 20px;">
+                    <li style="margin-bottom: 14px;"><strong>Large-Scale Vendor Transitions:</strong> Managed vendor transitions, contract negotiations, and operational integration for enterprise programs</li>
+                    <li style="margin-bottom: 14px;"><strong>Strategic Operations:</strong> Oversaw strategic operations and contract management across multiple technology domains</li>
+                    <li style="margin-bottom: 14px;"><strong>Primary Liaison Role:</strong> Acted as primary liaison between IT, Cyber, Data Engineering, Operations, and Compliance teams</li>
+                    <li style="margin-bottom: 14px;"><strong>Requirements Translation:</strong> Translated complex business needs into technical requirements for vendor partnerships</li>
+                    <li style="margin-bottom: 0;"><strong>Operational Integration:</strong> Led operational integration and change management for large-scale technology implementations</li>
+                </ul>
+            </div>
+            
+            <h3 style="color: #e50914; margin-top: 35px; margin-bottom: 25px; font-size: 1.4rem;">Key Achievements & Impact</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 35px;">
+                <div style="background: rgba(229, 9, 20, 0.1); padding: 25px; border-radius: 10px; border-left: 4px solid #e50914;">
+                    <h5 style="color: #e50914; margin-bottom: 12px; font-size: 1.1rem;">Financial Impact</h5>
+                    <p style="margin: 0; font-weight: 500; line-height: 1.5;"><strong>$25M+ Organizational Savings</strong><br>through strategic IAM migration and process optimization</p>
+                </div>
+                <div style="background: rgba(229, 9, 20, 0.1); padding: 25px; border-radius: 10px; border-left: 4px solid #e50914;">
+                    <h5 style="color: #e50914; margin-bottom: 12px; font-size: 1.1rem;">Operational Excellence</h5>
+                    <p style="margin: 0; font-weight: 500; line-height: 1.5;"><strong>Zero Major Defect Execution</strong><br>Perfect track record on enterprise-scale technology implementations</p>
+                </div>
+                <div style="background: rgba(229, 9, 20, 0.1); padding: 25px; border-radius: 10px; border-left: 4px solid #e50914;">
+                    <h5 style="color: #e50914; margin-bottom: 12px; font-size: 1.1rem;">Customer Impact</h5>
+                    <p style="margin: 0; font-weight: 500; line-height: 1.5;"><strong>Over 120,000 Cases Solved</strong><br>with $15M+ in complaint-related cost savings</p>
+                </div>
+                <div style="background: rgba(229, 9, 20, 0.1); padding: 25px; border-radius: 10px; border-left: 4px solid #e50914;">
+                    <h5 style="color: #e50914; margin-bottom: 12px; font-size: 1.1rem;">Recognition</h5>
+                    <p style="margin: 0; font-weight: 500; line-height: 1.5;"><strong>Multiple Awards:</strong><br>Gold Stevie Award, NICSA NOVA Award, 2× TIAA Values Champion</p>
+                </div>
+            </div>
+            
+            <h3 style="color: #e50914; margin-top: 35px; margin-bottom: 25px; font-size: 1.4rem;">Core Competencies Demonstrated</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 35px;">
+                <span style="background: linear-gradient(135deg, #333333, #444444); color: #ffffff; padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; font-weight: 500;">Technical Program Management</span>
+                <span style="background: linear-gradient(135deg, #333333, #444444); color: #ffffff; padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; font-weight: 500;">Identity & Access Management</span>
+                <span style="background: linear-gradient(135deg, #333333, #444444); color: #ffffff; padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; font-weight: 500;">Cybersecurity Governance</span>
+                <span style="background: linear-gradient(135deg, #333333, #444444); color: #ffffff; padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; font-weight: 500;">Data Governance & Stewardship</span>
+                <span style="background: linear-gradient(135deg, #333333, #444444); color: #ffffff; padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; font-weight: 500;">Agile/SAFe Leadership</span>
+                <span style="background: linear-gradient(135deg, #333333, #444444); color: #ffffff; padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; font-weight: 500;">Vendor Management</span>
+                <span style="background: linear-gradient(135deg, #333333, #444444); color: #ffffff; padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; font-weight: 500;">Cross-Functional Leadership</span>
+                <span style="background: linear-gradient(135deg, #333333, #444444); color: #ffffff; padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; font-weight: 500;">Digital Transformation</span>
+            </div>
+            
+            <div style="margin-top: 35px; padding-top: 25px; border-top: 2px solid #333; text-align: center;">
+                <a href="mailto:digger.woods@gmail.com" class="btn-primary" style="margin-right: 15px; padding: 12px 24px; font-weight: 500;">Contact David</a>
+                <a href="#" onclick="downloadResume()" class="btn-secondary" style="padding: 12px 24px; font-weight: 500;">Download Full Resume</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Awards Modal -->
+    <div id="awards-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('awards-modal')">&times;</span>
+            
+            <!-- Awards Header Background -->
+            <div style="position: relative; margin-bottom: 30px; border-radius: 12px; overflow: hidden; text-align: center;">
+                <img src="./assets/images/multiple-awards.jpg" alt="Awards & Recognition" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 20px;">
+                    <h2 style="color: #e50914; margin: 0;">Awards & Recognition</h2>
+                    <p style="color: #ffffff; margin: 5px 0 0 0;"><strong>Gold Stevie Award | NICSA NOVA Award | 2× TIAA Values Champion</strong></p>
+                </div>
+            </div>
+            
+            <p>Recognized for outstanding leadership and innovation across multiple industry organizations. These awards represent excellence in technology leadership, operational transformation, and organizational values.</p>
+            
+            <h3 style="color: #e50914; margin-top: 30px;">Recognition Details:</h3>
+            <div style="background: rgba(229, 9, 20, 0.05); padding: 20px; border-radius: 10px; border-left: 4px solid #e50914; margin-bottom: 30px;">
+                <h4 style="color: #e50914; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;"><img src="./assets/images/gold-stevie.png" alt="Gold Stevie Award" style="width: 40px; height: 40px; object-fit: contain;"> Gold Stevie Award</h4>
+                <p style="margin-bottom: 15px;">Prestigious international business award recognizing excellence in innovation, leadership, and business achievement. Awarded for outstanding technology leadership and organizational transformation initiatives.</p>
+                
+                <h4 style="color: #e50914; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;"><img src="./assets/images/nicsa-award.webp" alt="NICSA NOVA Award" style="width: 40px; height: 40px; object-fit: contain;"> NICSA NOVA Award</h4>
+                <p style="margin-bottom: 15px;">National Investment Company Service Association recognition for innovation and excellence in operational advancement within the financial services industry.</p>
+                
+                <h4 style="color: #e50914; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;"><img src="./assets/images/tiaa-logo.webp" alt="TIAA Values Champion" style="width: 40px; height: 40px; object-fit: contain;"> TIAA Values Champion (2×)</h4>
+                <p>Dual recognition for consistently demonstrating organizational core values through exceptional performance, leadership, and commitment to excellence. Awarded for embodying integrity, collaboration, and innovation in daily work.</p>
+            </div>
+            
+            <h3 style="color: #e50914; margin-top: 30px;">Impact & Significance:</h3>
+            <ul style="margin-bottom: 30px;">
+                <li><strong>Industry Recognition:</strong> Validated excellence across multiple professional organizations</li>
+                <li><strong>Leadership Excellence:</strong> Demonstrated ability to drive transformational change</li>
+                <li><strong>Innovation Focus:</strong> Recognized for implementing cutting-edge solutions</li>
+                <li><strong>Values Alignment:</strong> Consistent demonstration of organizational and professional integrity</li>
+                <li><strong>Peer Validation:</strong> Awards reflect recognition from industry colleagues and leaders</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
